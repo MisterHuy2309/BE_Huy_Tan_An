@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới thiệu · VPS Deploy Demo</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect rx='8' width='32' height='32' fill='%230ea5e9'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' fill='white'%3EV%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <header class="nav">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">V</span>
+        <span>NovaHost</span>
+      </a>
+      <nav>
+        <a href="index.html#features">Tính năng</a>
+        <a href="index.html#status">Trạng thái</a>
+        <a href="about.html">Giới thiệu</a>
+        <a class="btn btn-sm" href="index.html#contact">Liên hệ</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <p class="eyebrow">Deploy nhanh</p>
+      <h1>Hướng dẫn test trên VPS</h1>
+      <p class="lead">Upload nguyên thư mục này lên server, trỏ web server vào thư mục chứa <code>index.html</code>.</p>
+
+      <ol class="steps">
+        <li>
+          <strong>Copy files</strong>
+          <pre><code>scp -r . user@YOUR_VPS_IP:/var/www/html/</code></pre>
+        </li>
+        <li>
+          <strong>Nginx (ví dụ)</strong>
+          <pre><code>server {
+    listen 80;
+    server_name _;
+    root /var/www/html;
+    index index.html;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}</code></pre>
+        </li>
+        <li>
+          <strong>Mở trình duyệt</strong>
+          <p>Vào <code>http://YOUR_VPS_IP/</code>. Nếu thấy trang này thì HTML đã được serve. Nếu CSS/JS load thì static files OK.</p>
+        </li>
+      </ol>
+    </main>
+
+    <footer>
+      <p><a href="index.html">← Về trang chủ</a></p>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

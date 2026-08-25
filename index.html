@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VPS Deploy Demo</title>
+    <meta name="description" content="Website HTML tĩnh để test deploy lên VPS." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect rx='8' width='32' height='32' fill='%230ea5e9'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' fill='white'%3EV%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <header class="nav">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">V</span>
+        <span>NovaHost</span>
+      </a>
+      <nav>
+        <a href="#features">Tính năng</a>
+        <a href="#status">Trạng thái</a>
+        <a href="about.html">Giới thiệu</a>
+        <a class="btn btn-sm" href="#contact">Liên hệ</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Static HTML · Nginx / Apache / Caddy</p>
+        <h1>Website demo để test deploy lên VPS</h1>
+        <p class="lead">
+          Trang tĩnh, không cần database hay backend. Copy thư mục này vào
+          <code>/var/www/html</code> (hoặc document root) là chạy.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#status">Kiểm tra trang</a>
+          <a class="btn btn-ghost" href="about.html">Hướng dẫn deploy</a>
+        </div>
+        <div class="hero-card">
+          <div>
+            <span class="dot"></span>
+            <strong>HTTP 200</strong>
+            <span id="page-ok">Trang đã load thành công</span>
+          </div>
+          <div>
+            <strong>Thời gian</strong>
+            <span id="now">—</span>
+          </div>
+          <div>
+            <strong>Host</strong>
+            <span id="host">—</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <h2>Phù hợp để kiểm tra</h2>
+        <p class="muted">Nếu bạn thấy layout, CSS và JS bên dưới thì static files đã được serve đúng.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>HTML tĩnh</h3>
+            <p>Nhiều trang, CSS riêng, JS riêng — test rewrite, MIME type và đường dẫn tương đối.</p>
+          </article>
+          <article class="card">
+            <h3>Responsive</h3>
+            <p>Mở trên desktop và điện thoại để xác nhận Nginx trả file CSS không bị cache sai.</p>
+          </article>
+          <article class="card">
+            <h3>Không phụ thuộc CDN</h3>
+            <p>Mọi asset nằm local. VPS offline DNS vẫn hiển thị được nếu bạn dùng IP.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="status" class="section">
+        <h2>Health check</h2>
+        <div class="status-board">
+          <div class="stat">
+            <span>CSS</span>
+            <strong id="css-ok">OK</strong>
+          </div>
+          <div class="stat">
+            <span>JavaScript</span>
+            <strong id="js-ok">Đang kiểm tra…</strong>
+          </div>
+          <div class="stat">
+            <span>Đường dẫn</span>
+            <strong id="path">—</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Form demo</h2>
+        <p class="muted">Submit chỉ chạy phía trình duyệt — không gửi server.</p>
+        <form id="demo-form" class="form">
+          <label>
+            Tên
+            <input name="name" required placeholder="Nguyễn Văn A" />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" required placeholder="ban@example.com" />
+          </label>
+          <label>
+            Ghi chú
+            <textarea name="note" rows="3" placeholder="Deploy Nginx trên Ubuntu…"></textarea>
+          </label>
+          <button class="btn" type="submit">Gửi thử</button>
+          <p id="form-msg" class="form-msg" hidden></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>NovaHost Demo · HTML tĩnh cho VPS · 2026</p>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
