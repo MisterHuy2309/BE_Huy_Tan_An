@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VPS Deploy Demo</title>
-    <meta name="description" content="Website HTML tĩnh để test deploy lên VPS." />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect rx='8' width='32' height='32' fill='%230ea5e9'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' fill='white'%3EV%3C/text%3E%3C/svg%3E" />
+    <title>Huy - VPS Deploy Demo</title>
+    <meta name="description" content="Website HTML tĩnh test CI/CD tự động lên VPS qua GitHub Actions." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect rx='8' width='32' height='32' fill='%230ea5e9'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' fill='white'%3EH%3C/text%3E%3C/svg%3E" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="bg-grid" aria-hidden="true"></div>
     <header class="nav">
       <a class="logo" href="index.html">
-        <span class="logo-mark">V</span>
-        <span>NovaHost</span>
+        <span class="logo-mark">H</span>
+        <span>Huy.tanangroup</span>
       </a>
       <nav>
         <a href="#features">Tính năng</a>
@@ -25,14 +25,13 @@
 
     <main>
       <section class="hero">
-        <p class="eyebrow">Static HTML · Nginx / Apache / Caddy</p>
-        <h1>Website demo để test deploy lên VPS</h1>
+        <p class="eyebrow">GitHub Actions CI/CD · Nginx · Ubuntu VPS</p>
+        <h1>🚀 CI/CD Tự Động Triển Khai Thành Công!</h1>
         <p class="lead">
-          Trang tĩnh, không cần database hay backend. Copy thư mục này vào
-          <code>/var/www/html</code> (hoặc document root) là chạy.
+          Trang web được cập nhật tự động mỗi khi push code lên GitHub repo <code>BE_Huy_Tan_An</code>.
         </p>
         <div class="hero-actions">
-          <a class="btn" href="#status">Kiểm tra trang</a>
+          <a class="btn" href="#status">Kiểm tra trạng thái</a>
           <a class="btn btn-ghost" href="about.html">Hướng dẫn deploy</a>
         </div>
         <div class="hero-card">
@@ -61,8 +60,8 @@
             <p>Nhiều trang, CSS riêng, JS riêng — test rewrite, MIME type và đường dẫn tương đối.</p>
           </article>
           <article class="card">
-            <h3>Responsive</h3>
-            <p>Mở trên desktop và điện thoại để xác nhận Nginx trả file CSS không bị cache sai.</p>
+            <h3>Tự động hóa CI/CD</h3>
+            <p>GitHub Actions tự động kết nối SSH và pull code mới vào VPS trong vòng vài giây.</p>
           </article>
           <article class="card">
             <h3>Không phụ thuộc CDN</h3>
@@ -95,15 +94,15 @@
         <form id="demo-form" class="form">
           <label>
             Tên
-            <input name="name" required placeholder="Nguyễn Văn A" />
+            <input name="name" required placeholder="Châu Gia Huy" />
           </label>
           <label>
             Email
-            <input name="email" type="email" required placeholder="ban@example.com" />
+            <input name="email" type="email" required placeholder="huy@tanangroup.net" />
           </label>
           <label>
             Ghi chú
-            <textarea name="note" rows="3" placeholder="Deploy Nginx trên Ubuntu…"></textarea>
+            <textarea name="note" rows="3" placeholder="Deploy Nginx tự động qua GitHub Actions..."></textarea>
           </label>
           <button class="btn" type="submit">Gửi thử</button>
           <p id="form-msg" class="form-msg" hidden></p>
@@ -112,7 +111,7 @@
     </main>
 
     <footer>
-      <p>NovaHost Demo · HTML tĩnh cho VPS · 2026</p>
+      <p>Huy Tan An Demo · CI/CD Auto Deploy VPS · 2026</p>
     </footer>
     <script src="js/main.js"></script>
   </body>
