@@ -1,0 +1,22 @@
+﻿name: Auto Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH and Pull Code on VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 14.225.255.139
+          username: tester_huy
+          password: ${{ secrets.VPS_HUY }}
+          port: 22
+          script: |
+            cd /opt/myweb/huy.tanangroup.net
+            git pull origin main
