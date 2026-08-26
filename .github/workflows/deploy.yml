@@ -17,8 +17,8 @@ jobs:
         with:
           switches: -avz --delete --exclude='.git' --exclude='.github'
           path: ./
-          remote_path: /opt/myweb/huy.tanangroup.net/
-          remote_host: 14.225.255.139
-          remote_port: 22
-          remote_user: tester_huy
+          remote_path: ${{ secrets.VPS_REMOTE_PATH }}
+          remote_host: ${{ secrets.VPS_HOST }}
+          remote_port: ${{ secrets.VPS_PORT }}
+          remote_user: ${{ secrets.VPS_USER }}
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
