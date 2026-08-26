@@ -1,22 +1,24 @@
-﻿name: Auto Deploy to VPS
+﻿name: Deploy to VPS
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: SSH and Pull Code on VPS
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy files via rsync
+        uses: burnett01/rsync-deployments@7.0.2
         with:
-          host: 14.225.255.139
-          username: tester_huy
-          password: ${{ secrets.VPS_HUY }}
-          port: 22
-          script: |
-            cd /opt/myweb/huy.tanangroup.net
-            git pull origin main
+          switches: -avz --delete --exclude='.git' --exclude='.github'
+          path: ./
+          remote_path: /opt/myweb/huy.tanangroup.net/
+          remote_host: 14.225.255.139
+          remote_port: 22
+          remote_user: tester_huy
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
